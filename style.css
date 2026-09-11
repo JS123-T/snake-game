@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0f172a; /* 深藍色背景 */
+    color: #e2e8f0; /* 柔和的白色文字 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#score {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #94a3b8; /* 灰色分數文字 */
+}
+
+canvas {
+    border: 2px solid #334155; /* 深色邊框 */
+    background-color: #1e293b; /* 匹配的深色畫布背景 */
+    border-radius: 8px; /* 圓角 */
+}
