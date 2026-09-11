@@ -10,6 +10,7 @@ let direction = { x: 1, y: 0 };
 let nextDirection = { x: 1, y: 0 };
 let score = 0;
 let gameOver = false;
+let paused = false;
 
 function createFood() {
     let newFood;
@@ -36,7 +37,7 @@ function draw() {
 }
 
 function update() {
-    if (gameOver) {
+    if (gameOver || paused) {
         return;
     }
 
@@ -94,6 +95,13 @@ document.addEventListener('keydown', (event) => {
 
     if (event.key === 'Enter' && gameOver) {
         restart();
+        return;
+    }
+
+    if (event.code === 'Space' && !gameOver) {
+        event.preventDefault();
+        paused = !paused;
+        scoreElement.textContent = paused ? `遊戲暫停，分數: ${score}` : `分數: ${score}`;
         return;
     }
 
